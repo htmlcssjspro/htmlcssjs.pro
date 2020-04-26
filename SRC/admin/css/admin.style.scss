@@ -1,0 +1,24 @@
+/*!
+ * Date: 02.2020
+ * Автор: Сергей Тарасов aka MILITER
+ * Author: Sergei Tarasov aka MILITER
+ * Web-site: https://htmlcssjs.pro
+ * E-mail: htmlcssjs.pro@gmail.com, master@htmlcssjs.pro
+ * Telegram: @htmlcssjspro
+ */
+
+@import 'D:/WebDevelopment/Projects/libs/scss/normalize';
+@import './styles/variables';
+@import 'D:/WebDevelopment/Projects/libs/scss/variables';
+@import 'D:/WebDevelopment/Projects/libs/scss/mixins/mixins';
+@import 'D:/WebDevelopment/Projects/libs/scss/fonts/fonts';
+@include font-face($font-family);
+
+@import 'D:/WebDevelopment/Projects/libs/scss/icons/_icons';
+@import 'D:/WebDevelopment/Projects/libs/scss/img/_img';
+
+@import 'D:/WebDevelopment/Projects/libs/scss/placeholders';
+
+@import './styles/styles';
+
+@import './sections/sections';

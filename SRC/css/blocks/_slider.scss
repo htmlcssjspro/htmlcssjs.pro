@@ -1,0 +1,33 @@
+.slider {
+  @extend %wrapper;
+
+  &__item {
+    // flex: 0 0 100%;
+    height: 300px;
+
+    &_item-1 {
+      @extend .slider__item;
+      background: $indigo;
+    }
+
+    &_item-2 {
+      @extend .slider__item;
+      background: $pink;
+    }
+
+    &_item-3 {
+      @extend .slider__item;
+      background: $yellow;
+    }
+
+    &_item-4 {
+      @extend .slider__item;
+      background: $green;
+    }
+
+    &_item-5 {
+      @extend .slider__item;
+      background: $cyan;
+    }
+  }
+}

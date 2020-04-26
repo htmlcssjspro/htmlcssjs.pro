@@ -1,0 +1,49 @@
+.header {
+  // position: fixed;
+  // position: absolute;
+  // position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $grey-200;
+
+  z-index: 100;
+
+  &__top,
+  &__bottom {
+    @extend %wrapper;
+    @extend %flex-sb;
+  }
+
+  &__bottom_wrap {
+    border-top: 2px solid $grey-500;
+    border-bottom: 2px solid $grey-500;
+  }
+
+  &__logo {
+    @extend %logo;
+    flex: 0 0 $logoWidth;
+  }
+
+  &__contacts {
+    flex: 0 0;
+    margin: 0 0.5em;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  &__btn {
+    @extend %btn;
+    flex: 0 0;
+    margin: 0 0.5em;
+  }
+
+  &__info {
+    flex: 0 0 30%;
+    text-align: left;
+  }
+
+  &__nav {
+    flex: 0 0 60%;
+  }
+}

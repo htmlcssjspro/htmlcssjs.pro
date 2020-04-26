@@ -1,0 +1,118 @@
+// удалить после верстки
+%wrapper {
+  border: 1px solid red;
+}
+
+//////////////////////////////////////////////
+
+
+body {
+  @extend %body;
+}
+
+.header,
+.main,
+.aside,
+.footer {
+  @extend %container;
+}
+
+%bg {
+  &_fixed {
+    position: fixed;
+  }
+
+  &_absolute {
+    position: absolute;
+  }
+}
+
+.bg {
+  // @extend %bg_fixed;
+  @extend %bg_absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: $bgGreen;
+  z-index: -1;
+}
+
+
+.nav {
+  @extend %flex-sa;
+
+  &_hor {
+    @extend .nav;
+    flex-direction: row;
+  }
+
+  &_ver {
+    @extend .nav;
+    flex-direction: column;
+  }
+
+  &_ver &__link+&__link {
+    margin-top: 2em;
+  }
+
+  &__link {
+    @extend %link;
+    margin: 0.5em;
+    // padding: 0.5em 1em;
+
+    &[disabled] {
+      color: $grey-600;
+    }
+  }
+}
+
+.title {
+
+  &_main {
+    font-size: 1em;
+    margin: 1em 0;
+  }
+
+  &_sup,
+  &_sub {
+    font-size: 0.5em;
+    margin: 1em 0;
+  }
+}
+
+
+// forms
+.valid {
+  outline-color: green;
+  outline-style: auto;
+  outline-width: 1px;
+}
+
+.invalid {
+  outline-color: red;
+  outline-style: auto;
+  outline-width: 1px;
+}
+
+
+// nesessery icons from "icons"
+.phone {
+  @extend %png-material-phone;
+
+  &::before {
+    vertical-align: bottom;
+  }
+}
+
+.telegram {
+  @extend %svg-ya-telegram;
+
+  &::before {
+    // border-radius: 50%;
+  }
+
+}
+
+
+// nesessery images from "img"
