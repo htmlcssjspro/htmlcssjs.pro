@@ -1,0 +1,25 @@
+{
+    "name": "militer/htmlcssjs.pro",
+    "description": "my web-site",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Sergei MILITER",
+        "email": "militer@htmlcssjs.pro"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Militer\\": "app/militer/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Dev\\": "dev/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {}
+}
