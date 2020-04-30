@@ -10,7 +10,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Militer\\": "app/militer/"
+            "Militer\\": "htmlcssjs.pro/mvc/src/"
         }
     },
     "autoload-dev": {

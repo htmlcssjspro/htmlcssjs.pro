@@ -1,3 +1,6 @@
 [submodule "libs"]
 	path = libs
 	url = https://github.com/htmlcssjspro/libs.git
+[submodule "htmlcssjspro/mvc"]
+	path = htmlcssjspro/mvc
+	url = https://github.com/htmlcssjspro/mvc.git

@@ -5,25 +5,32 @@ AddDefaultCharset UTF-8
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /
 
     RewriteRule ^$ /public/index.php [L]
-
-    ErrorDocument 404 /404
+    RewriteRule ^favicon.ico$ /public/favicon.ico [NC,L]
+    RewriteRule ^robots.txt$ /public/robots.php [NC,L]
+    RewriteRule ^sitemap.xml$ /public/sitemap.php [NC,L]
     RewriteRule ^404$ /public/404.php [L]
 
+    ErrorDocument 404 /404
+    ErrorDocument 403 /404
 
-    RewriteRule ^favicon.ico$ public/favicon.ico [NC,L]
-    RewriteRule ^robots.txt$ public/robots.php [NC,L]
-    RewriteRule ^sitemap.xml$ public/sitemap.php [NC,L]
+    RewriteRule ^(application|modules|system) - [NC,F,L]
 
-    # Редирект закрывающего слеша если не папка
+    ### Убираем повторяющиеся слеши (//) в URL
+    RewriteCond %{THE_REQUEST} //
+    RewriteRule .* /$0 [R=301,L]
+
+    ## Редирект закрывающего слеша если не папка
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} /$
     RewriteRule (.*)/$ /$1 [R=301,L]
 
-    # Перенаправление всех запросов на главный контроллер
-    # (кроме реально существующих папок и файлов)
+    ### Перенаправление всех запросов на главный контроллер
+    ### (кроме реально существующих папок и файлов)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule (.*) /public/index.php [L]
 </IfModule>

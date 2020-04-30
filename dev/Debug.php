@@ -2,49 +2,53 @@
 
 namespace Dev;
 
-
 class Debug
 {
-  public $propertyName;
-  static $server_arr = [
-    "HTTP_HOST",
-    "SERVER_NAME",
-    "REQUEST_SCHEME",
-    "HTTP_USER_AGENT",
-    "DOCUMENT_ROOT",
-    "SCRIPT_FILENAME",
-    "PHP_SELF",
-    "SCRIPT_NAME",
-    "REQUEST_METHOD",
-    "REQUEST_URI",
-    "QUERY_STRING",
-    "REDIRECT_URL",
-  ];
-  static public function pre($func, $obj)
-  {
-    echo '<pre>';
-    // $func($obj);
-    call_user_func($func, $obj);
-    echo '</pre>';
-  }
-  static public function vd($obj)
-  {
-    self::pre('var_dump', $obj);
-  }
-  static public function print($obj)
-  {
-    self::pre('print_r', $obj);
-  }
-  static public function server()
-  {
-    echo '<br>$_SERVER:';
-    echo '<table>';
-    foreach (self::$server_arr as $value) {
-      echo "<tr><td>[$value]</td><td> => </td><td>$_SERVER[$value]</td></tr>";
+    public $propertyName;
+    private static $server_arr = [
+        "DOCUMENT_ROOT",
+        "REQUEST_SCHEME",
+        "SERVER_NAME",
+        "HTTP_HOST",
+        "HTTP_USER_AGENT",
+        "PHP_SELF",
+        "SCRIPT_NAME",
+        "SCRIPT_FILENAME",
+        "REQUEST_METHOD",
+        "REQUEST_URI",
+        "REDIRECT_URL",
+        "QUERY_STRING",
+    ];
+
+    private static function pre($func, $obj)
+    {
+        echo '<br><pre>';
+        // echo "\$$obj:<br>";
+        // $func($obj);
+        \call_user_func($func, $obj);
+        \debug_print_backtrace();
+        echo '</pre><br>';
     }
-    echo '</table><br>';
-    \debug_print_backtrace();
-  }
+
+    public static function vd($obj)
+    {
+        self::pre('var_dump', $obj);
+    }
+
+    public static function print($obj)
+    {
+        self::pre('print_r', $obj);
+    }
+
+    public static function server()
+    {
+        echo '<br><table>';
+        foreach (self::$server_arr as $value) {
+            echo "<tr><td>\$_SERVER[$value]</td><td> ==> </td><td>$_SERVER[$value]</td></tr>";
+        }
+        echo '</table><br>';
+        \debug_print_backtrace();
+    }
 }
 
 
