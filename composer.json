@@ -10,7 +10,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Militer\\": "htmlcssjs.pro/mvc/src/"
+            "Htmlcssjspro\\": "htmlcssjspro/mvc/src/"
         }
     },
     "autoload-dev": {
