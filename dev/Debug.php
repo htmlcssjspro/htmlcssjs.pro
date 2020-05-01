@@ -50,16 +50,3 @@ class Debug
         \debug_print_backtrace();
     }
 }
-
-
-// echo $_SERVER["HTTP_HOST"];
-// echo $_SERVER["SERVER_NAME"];
-// echo $_SERVER["HTTP_USER_AGENT"];
-// echo $_SERVER["DOCUMENT_ROOT"];
-// echo $_SERVER["SCRIPT_FILENAME"];
-// echo $_SERVER["REDIRECT_URL"];
-// echo $_SERVER["REQUEST_METHOD"];
-// echo $_SERVER["REQUEST_URI"];
-// echo $_SERVER["QUERY_STRING"];
-// echo $_SERVER["PHP_SELF"];
-// echo $_SERVER["SCRIPT_NAME"];

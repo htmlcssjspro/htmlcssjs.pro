@@ -19,7 +19,9 @@
             "Dev\\": "dev/"
         }
     },
-    "minimum-stability": "stable",
-    "require": {},
+    "minimum-stability": "dev",
+    "require": {
+        "militer/mvc": "dev-master"
+    },
     "require-dev": {}
 }

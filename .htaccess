@@ -16,7 +16,7 @@ AddDefaultCharset UTF-8
     ErrorDocument 404 /404
     ErrorDocument 403 /404
 
-    RewriteRule ^(application|modules|system) - [NC,F,L]
+    RewriteRule ^(app|config|database|dev|tests|vendor) - [NC,F,L]
 
     ### Убираем повторяющиеся слеши (//) в URL
     RewriteCond %{THE_REQUEST} //
