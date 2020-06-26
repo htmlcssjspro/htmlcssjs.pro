@@ -1,7 +1,6 @@
-node_modules
 vendor
-database/keys.php
-package-lock.json
+node_modules
+
+config/config.php
+
 *.code-workspace
-SRC
-SERVER
